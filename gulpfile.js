@@ -29,6 +29,8 @@ gulp.task('assets', function(){
 gulp.task('connect', function() {
   connect.server({
     root: 'build',
+    host: '0.0.0.0',
+    port: 8080,
     livereload: true
   });
 });

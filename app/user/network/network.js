@@ -6,7 +6,7 @@ app.controller('NetworkCtrl', function($scope, $route, dataService, timerService
 	var loadData = function () {
 		console.log("Getting Network Data");
 
-		dataService.getData("/network/chart/usdHash/60", function(data){
+		dataService.getData("/nework/stats", function(data){  // /network/chart/usdHash/60
 			$scope.config = data;
 			console.log(data);
 		});

@@ -1,4 +1,12 @@
 /*** Global Styles ***/
+/* Colors
+rgb(44,55,66) ebony clay
+rgb(0,130,130) teal
+rgb(255,160,0) orange peel
+rgb(225,225,225) mercury
+rgb(235,235,235) gallery
+*/
+
 
 html, body {
   font-family: 'Source Sans Pro', sans-serif;
@@ -21,15 +29,57 @@ a:active  {
   color: #007BE6;
 }
 
+ .panel-subtitle {
+	 font-weight: bold;
+	 font-size: 110%;
+ }
+ 
+ .footer {
+	 text-align: center;
+	 font-size: 90%;
+	 padding-bottom: 40px;
+ }
+ 
 /*** Material Styles ***/
+md-card {
+  overflow: hidden;
+  background-color: rgb(215, 215, 215);
+}
+
+.md-headline {
+    font-size: 20px;
+}
+
+md-sidenav {
+	max-width: 220px;
+	min-width: 220px;
+}
+
+md-toolbar {
+	background-color: rgb(0, 130, 130) !important;
+	font-size: 14px;
+}
+
+.md-button {
+	min-width: 36px;
+}
+
+.material-icons {
+	color: rgb(255, 160, 0);
+}
+
 #main {
-  background: #f3f5f7;
+  background: rgb(240, 240, 240); 
 }
 
 .maintoolbar {
-  background-color: #fff;
-}
+  background-color: rgb(0, 130, 130); 
+  color: rgb(255, 255, 255);
+ }
 
+.maintoolbar span {
+
+}
 
 .statsbar md-card-title-text{
   text-align: right;
@@ -51,8 +101,17 @@ md-tooltip .md-content {
   font-size: 0.8em;
 }
 
-.navbar .smallfont h3 b{
-  display: inline-block;
+.md-divider {
+	color: white;
+}
+
+md-tooltip .md-content {
+  height: auto !important;
+}
+
+.md-tooltip {
+	font-size: 100%;
+	height: auto !important;
 }
 
 .sidenav {
@@ -130,6 +189,29 @@ md-tooltip .md-content {
   text-overflow:ellipsis
 }
 
+.nowrap {
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis
+}
+
+.frac { display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    letter-spacing: 0.001em;
+    text-align: center;
+}
+.frac > span {
+    display: block;
+    padding: 0.1em;
+}
+.frac span.bottom {
+    border-top: thin solid;
+}
+.frac span.symbol {
+    display: none;
+} 
+
 .hide-error-msg .md-errors-spacer{
   display: none
 }
@@ -164,6 +246,7 @@ md-tooltip .md-content {
 
 .navbar .login {
  color: #fff !important;
+ font-size: 20px;
 }
 
 /* CHARTS */
@@ -181,14 +264,34 @@ md-tooltip .md-content {
   height:300px;
 }
 
+.chartcontainer-pool {
+  width: 100% !important;
+  height: 150px;
+}
+
+.chartcontainer-pool .ng-isolate-scope {
+  height:150px;
+}
+
 /* LOGIN WINDOW */
 md-dialog .login{
   min-width: 800px !important;
 }
 
 .console {
-  height: 300px;
-  min-width: 500px;
+	height: 300px;
+	min-width: 500px;
+}
+
+@media (max-width: 600px) {
+	.console {
+		height: 300px;
+		min-width: 100%;
+	}
+	
+	md-dialog .login {
+		min-width: 100% !important;
+	}
 }
 
 .no-padding {

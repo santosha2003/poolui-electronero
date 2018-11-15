@@ -9,8 +9,8 @@
 						</div>
 					</md-card-title-media>
 					<md-card-title-text>
-						<span class="md-headline">{{poolStats.global.totalHashes | number}}</span>
-						<span class="md-subhead">Hashes Accepted</span>
+						<span class="md-headline">ETNX Pulse Highlight {{networkheight.main_height}}</span>
+						<span class="md-subhead">Bitcoin Talk (<a href="https://bitcointalk.org/index.php?topic=4980455.0/" target="_blank">Read more</a>)</span>
 					</md-card-title-text>
 				</md-card-title>
 			</md-card>
@@ -26,10 +26,21 @@
 					<md-card-title-text>
 						<div class="md-headline">{{poolStats.global.totalBlocksFound}}</div>
 						<div class="md-subhead">
-							<span>Blocks Found (<span am-time-ago="poolStats.global.lastBlockFoundTime*1000"></span>)
+							<span>Blocks Found</span>
+							<md-divider md-inset></md-divider>
+						        <a href="#/blocks"><span am-time-ago="poolStats.global.lastBlockFoundTime*1000"></span>
 							<md-tooltip md-direction="bottom">
-						    	{{poolStats.global.lastBlockFoundTime*1000 | date:'hh:mm:ss dd/MM/yy'}}
-						     </md-tooltip>
+						    	{{poolStats.global.lastBlockFoundTime*1000 | date:'HH:mm:ss dd/MM/yy'}}
+						        </md-tooltip>
+						        </a>
+						</div>
+					</md-card-title-text>
+					<md-card-title-text>
+						<div class="md-headline">{{((network.difficulty | difficultyToHashRate)/(360*poolStats.global.hashRate)) | number}}</div>
+						<div class="md-subhead">
+							<span>Time Per Block (days)</span>
+							<md-divider md-inset></md-divider>
+							<span class="md-subhead"><a href="#/home">Current effort {{((poolStats.global.roundHashes / network.difficulty)*100).toFixed(1) | number}} %</a></span>
 						</div>
 					</md-card-title-text>
 				</md-card-title>
@@ -48,6 +59,12 @@
 					<md-card-title-text>
 						<span class="md-headline">{{poolStats.global.miners}}</span>
 						<span class="md-subhead">Miners Connected</span>
+						<md-divider md-inset></md-divider>
+						<span class="md-subhead"><a href="#/ports">{{WorkersTotal | number}} Connections Total</a></span>
+					</md-card-title-text>
+					<md-card-title-text>
+						<span class="md-headline">{{poolStats.global.totalMinersPaid}}</span>
+						<span class="md-subhead">Miners Paid <a href="#/payments"><md-divider md-inset></md-divider>{{poolStats.global.totalPayments}} Payments</a></span>
 					</md-card-title-text>
 				</md-card-title>
 			</md-card>
@@ -61,10 +78,19 @@
 						</div>
 					</md-card-title-media>
 					<md-card-title-text>
-						<span class="md-headline">{{poolStats.global.totalMinersPaid}}</span>
-						<span class="md-subhead">Miners Paid <a href="#/payments">({{poolStats.global.totalPayments}} Payments)</a></span>
+						<span class="md-headline">${{msrusd}}</span>
+						<div class="md-subhead">
+							<span> Price (Masari) Electronero soon</span>
+							<md-divider md-inset></md-divider>
+							<span class="md-subhead"><a href="#/home">Avg. effort {{overallEffort | number:2 }} %</a></span>
+						</div>						
 					</md-card-title-text>
-
+					<md-card-title-text>
+						<span class="md-headline">${{((1000/network.difficulty)*86400*7*(network.value | toXMR)*msrusd) | number}}</span>
+						<span class="md-subhead">Est. Revenue</span>
+						<md-divider md-inset></md-divider>
+						<span class="md-subhead">(1 kH/s,per week)..{{network.difficulty}}</span>
+					</md-card-title-text>
 				</md-card-title>
 			</md-card>
 		</div>

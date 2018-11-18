@@ -196,9 +196,9 @@ var app = angular.module('poolui', [
 			});
 
 			dataService.getData("/network/stats", function(data){
-				var daemonPort = 20393;
+				//var daemonPort = 20393;
 				$scope.networkheight = data;
-				$scope.network = data[daemonPort];
+				$scope.network = data[GLOBALS.daemonPort];
 			});
 //			dataService.getData("/network/stats", function(data){
 //				$scope.network = data;

@@ -26,11 +26,23 @@ gulp.task('assets', function(){
     .pipe(gulp.dest('build/assets'))
 });
 
+gulp.task('font', function(){
+  return gulp.src('app/vendor/font-awesome/fonts/*')
+	.pipe(connect.reload())
+    .pipe(gulp.dest('build/assets/fonts'));
+});
+
+gulp.task('fontcss', function(){
+  return gulp.src('app/vendor/font-awesome/css/*')
+	.pipe(connect.reload())
+    .pipe(gulp.dest('build/assets/css'));
+});
+
 gulp.task('connect', function() {
   connect.server({
     root: 'build',
     host: '0.0.0.0',
-    port: 8080,
+    port: 8081,
     livereload: true
   });
 });

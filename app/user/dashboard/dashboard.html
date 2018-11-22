@@ -64,7 +64,7 @@
 									</md-list-item>
 									<md-list-item>
 										<p> Block Reward </p>
-										<p class="text-right">{{lastBlock[pooltype].value*10000000000 | toXMR | number:1 }} ETNX Pulse</p>
+										<p class="text-right">{{lastBlock[pooltype].value*10000000000 | toXMR | number:1 }} Masari atomic unit</p>
 									</md-list-item>
 									<md-list-item>
 										<p> Time Found </p>
@@ -80,7 +80,7 @@
 							<div layout-xs="row" layout-sm="row" layout="column" flex>
 								<md-list flex>
 									<md-list-item>
-										<p> [Min wallet payout {{config.min_wallet_payout | toXMR}} ETNXP] Fees </p>
+										<p> [Min wallet payout {{config.min_wallet_payout | toXMR}} MSR] Fees </p>
 										<p class="text-right">{{ poolStats[pooltype].pool_statistics.fee }} %</p>
 									</md-list-item>
 									<md-list-item>
@@ -165,11 +165,11 @@
 				</div>
 				<div flex layout="column" layout-gt-xs="row">
 					<div flex>
-						<h4> Total Due<br><i>(Please check if new block is found !)</i><h2>{{miner.amtDue | toXMR | number:10}} ETNXP</h2></h4>
-						<h4> ( + ...ETNXP estimation if you stay until next found block) </h4>
+						<h4> Total Due<br><i>(Please check if new block is found !)</i><h2>{{miner.amtDue | toXMR | number:10}} MSR</h2></h4>
+						<h4> ( + ...MSR estimation if you stay until next found block) </h4>
 					</div>
 					<div flex>
-						<h4> Total Paid<h2>{{miner.amtPaid | toXMR | number:10}} ETNXP</h2></h4>
+						<h4> Total Paid<h2>{{miner.amtPaid | toXMR | number:10}} MSR</h2></h4>
 					</div>
 				</div>
 			</div>

@@ -1,6 +1,9 @@
-# Monero Pool frontend
+# Masari Pool frontend
 
-### AngularJS based UI for [nodejs-pool](https://github.com/Snipa22/nodejs-pool)
+### AngularJS based UI for [nodejs-pool](https://github.com/santosha2003/masari-pool)
+
+change ports 8081 bind 0.0.0.0
+node 9.11.1  FreeBSD 12 stable  // try to update gulp 4.0.0 
 
 ### Features
 - See your hashrate on all pages
